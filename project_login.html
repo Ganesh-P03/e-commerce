@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> login   </title>
+</head>
+<style type="text/css">
+	.login {
+		text-align: center;
+    	justify-content: center;
+    	align-items: center;
+    	align-content: center;
+    	margin-top: 150px;
+    	box-shadow: 4px 4px 16px 8px black;
+    	margin-left: 600px;
+    	margin-right: 600px;
+    	padding: 50px;
+    	background-color: white;
+    	transition: 1s;
+	}
+	.login:hover{
+		transform: scale(1.001);
+		transition: 1s;
+		cursor: pointer;
+	}
+	.login form{
+    	background-color: white;
+    }
+	.login form h1{
+            font-family: helvatica,sans-serif;
+            font-weight: bolder;
+            background-color: white;
+            margin-bottom: 5px;
+            margin-top: -20px;
+
+	}
+	.login form input{
+		margin: 20px;
+		padding: 2px;
+		background-color: white;
+		width: 200px;
+		text-align: center;
+		font-size: 14px;
+		transition: 0.5s;
+	}
+	.login form input:hover{
+		box-shadow: 4px 4px 16px black;
+		transition:scale(1.10);
+		transition: 0.5s;
+	}
+	.button{
+		display: flex;
+		transition: 0.5s;
+		
+	}
+	.login form .reset{
+		padding: 7px;
+		margin-right: 100px;
+		margin-left: 20px;
+	    margin-top:  30px; 
+	    background-color: yellow;
+	    border-radius: 10px;
+	    box-shadow: 4px 4px 16px black;
+	    font-size: 16px;
+	    transition: 0.5s;
+	}
+	.login form .submit{
+		padding: 7px;
+		margin-right: 10px;
+		margin-left: 10px;
+	    margin-top:  30px; 
+	    background-color: yellow;
+	    border-radius: 10px;
+	    box-shadow: 4px 4px 16px black;
+	    font-size: 16px;
+	}
+    .signup_form form .register{
+    	margin-right: -50px;
+    	padding: 7px;
+    	margin-top:  30px;
+    	background-color: yellow; 
+    	border-radius: 10px;
+    	box-shadow: 4px 4px 16px black;
+    }
+    .login form button:hover{
+    	box-shadow: none;
+    	background-color: red;
+    	cursor: pointer;
+    	transform: scale(1.05);
+    	transition: 0.5s;
+    }
+    .login span{
+    	background-color: white;
+    	font-family: helvatica,sans-serif;
+
+    }
+</style>
+<body>
+       <div class="login">
+       	<form onsubmit="return validation()">
+       		<h1> welcome </h1>
+       		<h2> login here </h2>
+       		<div class="signin">
+       			<input type="text" placeholder="USERNAME" id=username>
+       			<span id="usererror" style="color: red;"></span>
+       			<input type="password" placeholder="PASSWORD" id="password">
+       			<span id="passworderror" style="color: red;"></span>
+       			<div class="button">
+       			<button class="reset">reset</button>
+       			<button class="submit" type="submit">login</button></div>
+       			<br>
+       			<br>
+       			<span>new users click here <a href="project_sign up.html">sign up</a></span>
+       		</div>
+       	</form>
+         </div>   
+
+
+<script type="text/javascript">
+	function validation(){
+		var username = document.getElementById('username').value;
+		var password = document.getElementById('password').value;
+
+
+		var usernamecheck = /^[A-Za-z]{3,}$/;
+		var passwordcheck = /^[a-zA-Z0-9]{6,}$/;
+
+		if (usernamecheck.test(username)) {
+           	document.getElementById('usererror').innerHTML="";
+           } else {
+           		document.getElementById('usererror').innerHTML="dont use special characters";
+           		return false;
+           }
+
+        if (passwordcheck.test(password)) {
+           	document.getElementById('passworderror').innerHTML="";
+           } else {
+           	document.getElementById('passworderror').innerHTML="wrong password";
+           	return false;
+           }
+</script>
+
+
+
+
+</body>
+</html>

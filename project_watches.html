@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>watches</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style type="text/css">
+nav{
+  	z-index: 9;
+  	margin: 0px;
+  	margin-right: 0px;
+  	margin-top: -10px;
+  	
+  }
+  nav ul{
+  	display: flex;
+  	background-color: black;
+  	padding: 2px;
+  }
+  nav ul li a{
+  	text-decoration: none;
+  	color: white;
+  }
+  nav ul li:hover{
+  	transform: scaleX(1.5);
+  	font-weight: bolder;
+  	font-family: helvatica,sans-serif;
+  	color: #ff8c1a;
+  	transition: 1s;
+  }
+  nav ul li a:hover{
+  	text-decoration: none;
+  	color: #ff8c1a;
+
+  }
+  .home {
+  	padding: 4px;
+  	border: 2px solid blue;
+  	
+  	margin-left: 160px;
+  	color: white;
+
+  }
+
+  .aboutus {
+  	padding: 4px;
+  	border: 2px solid blue;
+  	
+  	margin-left: 200px;
+  	color: white;
+
+  }
+
+  .followus {
+  	padding: 2px;
+  	border: 2px solid blue;
+  	color: white;
+    margin-left: 220px;
+  }
+  
+
+  .login {
+  	padding: 2px;
+  	border: 2px solid blue;
+  	color: white;
+    margin-left: 250px;
+    padding-left: 4px;
+    padding-right: 4px;
+  }
+
+  .signup {
+  	padding: 2px;
+  	border: 2px solid blue;
+  	margin-left: 200px;
+  	color: white;
+ }
+.catagories{
+   	display: flex;
+   	margin-top: -10px;
+   }
+  .catagories ul  a{
+  text-decoration: none;
+  color: black;
+  }
+
+   .list_catagories{
+   	margin-left: 0px;
+   	
+   	padding: 10px;
+   	font-size: 20px;
+   	height: 30px;
+   	margin-top: -9px;
+   }
+
+	.catagories ul {
+		display: flex;
+		margin-right: 0px;
+		margin-left: 0px;
+		background-color: #ffff80;
+		height: 50px;
+		z-index: 2;
+		width: 100%;
+		margin-top: -9px;
+
+		
+	}
+
+	
+  .catagories ul li  {
+  background-color:#4dffff;
+  	padding:10px;
+  	font-size: 20px;
+
+  }
+
+  .list_catagories{
+  	margin-left: 0px;
+  	background-color: #bfbfbf;
+  }
+
+  .catagories ul li:hover {
+	background-color: #00e600;
+    box-shadow: 4px 8px 16px black;
+	border:2px solid lime;
+	transition: 1s;
+	transform: scale(1.25);
+	cursor: pointer;
+	z-index: 2;
+}
+
+  .mobiles {
+  	margin-left: 100px;
+  	margin-right: 150px;
+  	padding:0px;
+  	font-size: 20px;
+  	border: 2px solid black;
+  	
+  	width: auto;
+
+    
+  }
+  
+   .laptops {
+   	
+  	margin-right: 200px;
+  	padding:5px;
+  	font-size: 20px;
+   border: 2px solid black;
+   
+  }
+  .watches {
+  	margin-right: 200px;
+  	padding:5px;
+  	font-size: 20px;
+   border: 2px solid black;
+   transform: scale(1.25);
+   box-shadow: 4px 8px 16px black;
+  }
+  .spects {
+  	margin-right: 200px;
+  	padding:5px;
+  	font-size: 20px;
+   border: 2px solid black;
+
+  }
+  .tabs{
+  	margin-left: -10px;
+  	padding:5px;
+  	font-size: 20px;
+    border: 2px solid black;
+
+  }
+   .mobiles1{
+ 	display: grid;
+ 	margin: 15px;
+  }
+  .d1{
+	display: flex;
+	box-shadow: 0 10px 20px 0 black;
+	margin-top: 30px;
+ }
+   .i1{
+   	transform: scale(0.85);
+   	margin-right: 20px;
+   }
+   .p1{
+        margin-top: 130px;
+        margin-bottom: 150px;
+        padding: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: 70px;
+        font-size: 20px;
+        font-weight: bolder;
+        border: 2px solid blue;
+        box-shadow: 0 10px 20px 0 brown;
+   }
+   .c1{
+   	  margin-left: 170px;
+   	  margin-top: 30PX;
+   }
+   .c1 h1{
+   	font-weight: bolder;
+   	font-family: helvatica, sans-serif;
+   	margin-left: 50px;
+   }
+   .c1 ul  li{
+   	margin-bottom: 20px;
+   	font-size: 20px;
+    }
+    .buynow1{
+    	margin-left: 150px;
+    	margin-top: 130px;
+    	margin-bottom: 150px;
+    	font-size: 20px;
+    	font-weight: bolder;
+    	box-shadow: 0 10px 20px 0 brown;
+    	border-collapse: collapse;
+    	padding: 10px;
+    	background: linear-gradient(to bottom, #99ccff 0%, #ffff66 100%);
+    }
+    #b2{
+    	margin-left: 210px;
+    }
+    .mobiles1 a{
+    		text-decoration: none;
+    }
+    .socialmedia{
+ margin-top: 40px;
+ justify-content: center;
+ align-items: center;
+ text-align: center;
+ background-color: black;
+ height: 150px;
+ }
+ .socialmedia .icons{
+ 	display: flex;
+ 	justify-content: center;
+ align-items: center;
+ text-align: center;
+ 
+ }
+
+ .socialmedia ul li{
+ 	margin:25px;
+ 	
+ }
+ .socialmedia ul li .fa{
+  color: white;
+ }
+
+    </style>
+<body>
+
+      <nav>
+  	<ul type="none">
+  		<li class="home"><a href="mainproject.html">HOME</a></li>
+  		<li class="aboutus"><a href="aboutus.html">about us</a></li>
+  		<li class="followus"><a href="#socialmedia">follow us</a></li>
+
+<li class="login"><a href="project_login.html" ><i class="fa fa-user-circle" aria-hidden="true"></i>  login</a></li>
+  		<li class="signup"><a href="project_sign up.html"><i class="fa fa-user-plus" aria-hidden="true"></i>  sign up</a></li>
+  	</ul>
+  </nav>
+
+   <!--catagories part-->
+     <div class="catagories">
+     	<div class="list_catagories">catagories</div>
+     	<ul type="none">
+              
+   <a href="project_mobiles.html"> <li class="mobiles"><i class="fa fa-mobile" aria-hidden="true"></i> mobiles</li></a>
+   <a href="project_laptops.html">  <li class="laptops"> <i class="fa fa-laptop" aria-hidden="true"></i> laptops</li></a>
+    <a href="project_watches.html"><li class="watches"> <i class="fa fa-clock-o" aria-hidden="true"></i> watches  </li></a>
+    <a href="project_spects.html"><li class="spects"> spects </li></a>
+    <a href="project_tabs.html"><li class="tabs">   <i class="fa fa-tablet" aria-hidden="true"></i>  tabs</li></a>
+     	</ul>
+     </div>
+  <!--end of catagories part-->
+
+<div class="mobiles1">
+	<div class="d1">
+                <div class="i1"><img src="oris.png" style="height: 320px; width: 280px;"></div>
+                <div class="p1">&#8377;16,999</div>
+                <div class="c1">
+     <p><h1>Oris Aviation</h1>
+        <ul>
+        	<li>Analog Grey Dial </li>
+        	<li>Movement: Automatic</li>
+        	<li>Sapphire Crystal, Water Resistance: 100</li>
+        	<li>Case Size: 44.7 mm, Clasp Type: Folding Clasp</li>
+        	</ul>
+        </p></div>
+        <a href="project_address.html" ><div class="buynow1">BUY NOW</div></a></div>
+
+      <div class="d1">
+               <div class="i1"><img src="nomos.png" style="height: 320px; width: 280px;"></div>
+                <div class="p1">&#8377;2,51,200</div>
+                <div class="c1">
+     <p><h1>Nomos Glashutte</h1>
+        <ul>
+        	<li>Analog White Dial</li>
+        	<li>Steel, Strap </li>
+        	<li>Material: Leather</li>
+        	<li>Sapphire Crystal, Water Resistance: 50</li>
+        	</ul>
+        </p></div>
+       <a href="project_address.html" > <div class="buynow1" id="b2">BUY NOW</div></a>
+
+	</div>
+	<div class="socialmedia"  id="socialmedia">
+  <ul class="icons" type="none">
+  	            <li><a href="https://www.instagram.com/" target="_blank">  <i class="fa fa-instagram fa-2x" aria-hidden="true " ></i></a></li>
+  	            <li><a href="https://www.facebook.com/" target="_blank"> <i class="fa fa-facebook-official fa-2x" aria-hidden="true"></i></a> </li>
+  	            <li><a href="https://twitter.com/?lang=en"  target="_blank">  <i class="fa fa-twitter-square fa-2x" aria-hidden="true"></i></a></li>
+  	            <li><a href="https://in.linkedin.com/"target="_blank">   <i class="fa fa-linkedin-square fa-2x" aria-hidden="true"></i></a></li>
+
+
+
+  </ul>
+<span style="color: WHITE;">SHOPPING WITH TRUST</span></div>
+</body>
+</html>

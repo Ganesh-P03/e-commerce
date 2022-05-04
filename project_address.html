@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>buy now</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+</head>
+<style type="text/css">
+	.details{
+    	text-align: center;
+    	justify-content: center;
+    	align-items: center;
+    	align-content: center;
+    	margin-top: 12px;
+    	box-shadow: 4px 4px 16px 8px black;
+    	margin-left: 500px;
+    	margin-right: 600px;
+    	padding: 50px;
+    	background-color: white;
+    	width: 400px;
+    }
+    .details form{
+    	background-color: white;
+    }
+	.details form h1{
+            font-family: helvatica,sans-serif;
+            font-weight: bolder;
+            background-color: white;
+            margin-bottom: 5px;
+            margin-top: -20px;
+
+	}
+	.details form input{
+		margin: 20px;
+		padding: 2px;
+		background-color: white;
+		width: 200px;
+		text-align: center;
+		font-size: 14px;
+	}
+	.details form input:hover{
+		box-shadow: 4px 4px 16px black;
+	}
+	.details form select{
+		margin: 20px;
+		padding: 2px;
+		background-color: white;
+		width: 200px;
+		text-align: center;
+		font-size: 14px;
+	}
+	.details form select:hover{
+		box-shadow: 4px 4px 16px black;
+	}
+	.details button{
+		margin-left: 10px;
+		font-size: 18px;
+		background: linear-gradient(to right, #ffff99 0%, #ff6666 100%);
+		border-radius: 10px;
+    	box-shadow: 4px 4px 16px black;
+	}
+	.details form button:hover{
+    	box-shadow: none;
+    	transform: scale(1.05);
+    	transition: 1s;
+    	cursor: pointer;
+    }
+    .details span{
+    	background-color: white;
+    	font-family: helvatica,sans-serif;
+
+    }
+</style>
+<body>
+	<div class="details">
+	<form name="details" method="post" >
+		<h1>Details Form</h1>
+		<input type="text" name="name" placeholder="FULLNAME" id="username"><br>
+		<span id="usererror" style="color: red;"></span><br>
+		<input type="number" name="mobilenumber" placeholder="mobile number" id="mobilenumber"><br>
+		<span id="numbererror" style="color: red;" ></span><br>
+<input type="number" name="2mobilenumber"placeholder="other mobile number" id="omobilenumber"><br>
+		<span id="onumbererror" style="color: red;" ></span><br>
+		<input type="email" name="email" placeholder="email" id="email"><br>
+		<span id="emailerror" style="color: red;" ></span><br>
+		<select name="product">
+			<option>--product--</option>
+			<option>OPPO A52 -&#8377;16,999</option>
+			<option>ONE PLUS 8 PRO -&#8377;59,999</option>
+			<option>DELL 5501 -&#8377;70,000</option>
+			<option>DELL XPS 7390 -&#8377;1,28,485</option>
+			<option>Oris Aviation -&#8377;16,999</option>
+			<option>Nomos Glashutte -&#8377;2,51,200</option>
+			<option>ipad air -&#8377;78,400</option>
+			<option>ipad pro -&#8377;1,34,900</option>
+		</select>
+	
+		<select name="state">
+			<option>--state--</option>
+			<option>andhra pradhesh</option>
+			<option>tamil nadu</option>
+			<option>karnataka</option>
+			<option>maharastra</option></select>
+		<input type="text" name="district" placeholder="enter your district name" id="district"><br>
+		<span id="districterror" style="color: red;" ></span><br>
+		<input type="text" name="city" placeholder="enter your city name" id="city"><br>
+		<span id="cityerror" style="color: red;" ></span><br>
+		<input type="number"  name="pincode" placeholder="pincode" id="pincode"><br>
+		<span id="pincodeerror" style="color: red;" ></span><br>
+		<input placeholder="landmark" id="landmark" name="landmark"><br>
+		<select>
+			<option>--cash on delivery--</option>
+		</select>	
+     <button>reset</button>
+     <button  type="submit" onclick="return validation()">confirm</button>
+	</form></div>
+<script type="text/javascript">
+	function validation(){
+		var username = document.getElementById('username').value;
+		var mobilenumber = document.getElementById('mobilenumber').value;
+		var omobilenumber = document.getElementById('omobilenumber').value;
+		var email = document.getElementById('email').value;
+		var district= document.getElementById('district').value;
+		var city= document.getElementById('city').value;
+        var pincode= document.getElementById('pincode').value;
+        
+
+
+        var usernamecheck = /^[A-Za-z0-9]{3,}$/;
+		var mobilenumbercheck = /^[6789]{1}[0-9]{9}$/;
+		var omobilenumbercheck = /^[6789]{1}[0-9]{9}$/;
+		var emailcheck = /^[A-Za-z0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{3,6}$/;
+		var districtcheck = /^[A-Za-z]{3,}$/;
+		var citycheck = /^[A-Za-z]{3,}$/;
+		var pincodecheck = /^[0-9]{6}$/;
+		
+
+		 if (usernamecheck.test(username)) {
+           	document.getElementById('usererror').innerHTML="";
+           } else {
+           		document.getElementById('usererror').innerHTML="format invalid";
+           		return false;
+           }
+           if (mobilenumbercheck.test(mobilenumber)) {
+           	document.getElementById('numbererror').innerHTML="";
+           } else {
+           	document.getElementById('numbererror').innerHTML="invalid mobilenumber";
+           	return false;
+           }
+           if (omobilenumbercheck.test(omobilenumber)) {
+           	document.getElementById('onumbererror').innerHTML="";
+           } else {
+           	document.getElementById('onumbererror').innerHTML="invalid mobilenumber";
+           	return false;
+           }
+           if (emailcheck.test(email)) {
+           	document.getElementById('emailerror').innerHTML="";
+           } else {
+           	document.getElementById('emailerror').innerHTML="invalid email";
+           	return false;
+           }
+           if (districtcheck.test(district)) {
+           	document.getElementById('districterror').innerHTML="";
+           } else {
+           		document.getElementById('districterror').innerHTML="district not found";
+           		return false;
+           }
+           if (citycheck.test(city)) {
+           	document.getElementById('cityerror').innerHTML="";
+           } else {
+           		document.getElementById('cityerror').innerHTML="city not found";
+           		return false;
+           }
+          if (pincodecheck.test(pincode)) {
+           	document.getElementById('pincodeerror').innerHTML="";
+           } else {
+           		document.getElementById('pincodeerror').innerHTML="enter valid pincode";
+           		return false;
+           }
+        
+       }
+
+         const scriptURL = 'https://script.google.com/macros/s/AKfycbxQDZY7JjeM0iXSI1qUsJ39CIz9xgFsWU1_CXTcweKjVcBTRgRjkMgZFg/exec'
+            const form = document.forms['details']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("your order has been confirmed.delivered soon "))
+                .catch(error => console.error('Error!', error.message))
+          } )    
+
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>sign up</title>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0,user-scalable=0">
+</head>
+<style type="text/css">
+	*{
+		margin: 0px;
+		padding: 0px;
+		
+	}
+
+    .signup_form{
+    	text-align: center;
+    	justify-content: center;
+    	align-items: center;
+    	align-content: center;
+    	margin-top: 120px;
+    	box-shadow: 4px 4px 16px 8px black;
+    	margin-left: 600px;
+    	margin-right: 600px;
+    	padding: 50px;
+    	background-color: white;
+    }
+    .signup_form form{
+    	background-color: white;
+    }
+	.signup_form form h1{
+            font-family: helvatica,sans-serif;
+            font-weight: bolder;
+            background-color: white;
+            margin-bottom: 5px;
+            margin-top: -20px;
+
+	}
+	.signup_form form input{
+		margin: 20px;
+		padding: 2px;
+		background-color: white;
+		width: 200px;
+		text-align: center;
+		font-size: 14px;
+	}
+	.signup_form form input:hover{
+		box-shadow: 4px 4px 16px black;
+	}
+	.signup_form form .reset{
+		padding: 7px;
+		margin-right: 100px;
+		margin-left: -20px;
+	    margin-top:  30px; 
+	    background-color: yellow;
+	    border-radius: 10px;
+	    box-shadow: 4px 4px 16px black;
+	}
+    .signup_form form .register{
+    	margin-right: -50px;
+    	padding: 7px;
+    	margin-top:  30px;
+    	background-color: yellow; 
+    	border-radius: 10px;
+    	box-shadow: 4px 4px 16px black;
+    }
+    .signup_form form button:hover{
+    	box-shadow: none;
+    	background-color: red;
+    	cursor: pointer;
+    }
+    .signup_form span{
+    	background-color: white;
+    	font-family: helvatica,sans-serif;
+
+    }
+
+</style>
+<body>
+
+
+	   <div class="signup_form">
+       <form name="signup" method="post">
+       	<h1>create account</h1><br>
+       	<input type="text" name="username" placeholder="USER NAME" required id="username"> <br>
+       	<span id="usererror" style="color: red;"></span>
+       	<input type="number" name="mobilenumber" placeholder="mobile number" required id="mobilenumber"><br>
+       	<span id="numbererror" style="color: red;" ></span>
+       	<input type="email" name="email" placeholder="email" id="email"><br>
+       	<span id="emailerror" style="color: red;"></span>
+       	<input type="password" name="password" placeholder="create password" id="password"><br>
+       	<span id="passworderror" style="color: red;"></span>
+       	<input type="password" placeholder="re-enter password" id="cpassword"><br>
+       	<span id="cpassworderror" style="color: red;"></span>
+
+       	<button class="reset" type="reset">RESET</button>
+       	<button class="register" type="submit" onclick="return validation()">SUBMIT</button>
+       </form> 
+        </div>
+<script type="text/javascript">
+    function validation(){
+		var username = document.getElementById('username').value;
+		var mobilenumber = document.getElementById('mobilenumber').value;
+		var email = document.getElementById('email').value;
+		var password = document.getElementById('password').value;
+		var cpassword = document.getElementById('cpassword').value;
+
+		var usernamecheck = /^[A-Za-z0-9]{3,}$/;
+		var mobilenumbercheck = /^[6789]{1}[0-9]{9}$/;
+		var emailcheck = /^[A-Za-z0-9]{3,}@[A-Za-z]{3,}[.]{1}[A-Za-z]{3,6}$/;
+		var passwordcheck = /^[a-zA-Z0-9]{6,}$/;
+
+           if (usernamecheck.test(username)) {
+           	document.getElementById('usererror').innerHTML="";
+           } else {
+           		document.getElementById('usererror').innerHTML=" please dont use special characters";
+           		return false;
+           }
+           if (mobilenumbercheck.test(mobilenumber)) {
+           	document.getElementById('numbererror').innerHTML="";
+           } else {
+           	document.getElementById('numbererror').innerHTML="invalid mobilenumber";
+           	return false;
+           }
+           if (emailcheck.test(email)) {
+           	document.getElementById('emailerror').innerHTML="";
+           } else {
+           	document.getElementById('emailerror').innerHTML="invalid email";
+           	return false;
+           }
+           if (passwordcheck.test(password)) {
+           	document.getElementById('passworderror').innerHTML="";
+           } else {
+           	document.getElementById('passworderror').innerHTML="min 6 characters required,dont use special characters";
+           	return false;
+           }
+           if (password.match(cpassword)) {
+           	document.getElementById('cpassworderror').innerHTML="";
+           } else {
+           	document.getElementById('cpassworderror').innerHTML="password doesnt match";
+            return false;
+           }
+
+	}
+
+
+	const scriptURL = 'https://script.google.com/macros/s/AKfycbzVvWAAV8gJ5ZAQTdXh8ZUbNM2h1NCGAUa51dIvCDP5znHMiRstCUUEyw/exec'
+            const form = document.forms['signup']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                .then(response => alert("you have succesfully created your account"))
+                .catch(error => console.error('Error!', error.message))
+            })
+
+
+
+</script>
+
+
+</body>
+</html>
